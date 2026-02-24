@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PERSONAL DETAILS</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url('https://i.pinimg.com/originals/aa/1b/01/aa1b0107b776f2a4cb0dffba54c06aed.gif');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+      overflow: hidden; /* Prevent scrolling */
+    }
+    #img1, #img2, #img3, #img4 {
+      position: absolute;
+      width: 57px;
+      height: 57px;
+    }
+    #img4 {
+      width: 65px;
+      height: 65px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color:rgb(000,000,000);font-family:'Brush Script MT', cursive;">Winny A.Verzosa</h1>
+  
+  <p style="color:black;font-family:Arial;font-size:14px;font-style:italic;">
+    <img id="img1" src="https://i.pinimg.com/originals/4b/9a/76/4b9a7627c8191e30923cbdd2517ca155.jpg">
+    <br>I am Winny A. Verzosa, 19 years of age, born on July 14, 2006 in Quezon City, Philippines. </br>
+    <br>I live in Project 4, QC and currently a senior high student under the Information and Communication Technology (ICT) strand at Quirino High School. </br>
+    <br>I completed my elementary level at Project 3 Elementary School and finished my junior high school at Quirino High School. </br>
+    <br>I am the third of four children of Raul O. Verzosa and Rosemarie T. Aquino. </br>
+  </p>
+  <p style="color:black;font-family:Arial;font-size:14px;font-style:italic;">
+    <img id="img2" src="https://i.pinimg.com/474x/12/8a/b0/128ab09831f1b2ec22769f2f2c359383.jpg?nii=t">
+    <br>I did not grew up as an excellent child, in fact I am a slow learner and it's quite hard for me to adapt to changes.</br> 
+    <br>It's not easy for me to socialize as it gets hard for me to communicate and express my feelings at times, </br>
+    <img id="img3" src="https://media1.tenor.com/m/-ppimn_IwNcAAAAd/fatass-teto-teto-plush.gif">
+    <br>I also find handling long-term relationships with my friends difficult as I tend to push people away. </br>
+    <br>I spend my free time engaging in personal interests such as playing video games, reading random stuff, watching anime, exploring the internet, and listening to music.</br> 
+    <br>I also enjoy going out when it rains, as I find peace and comfort in that atmosphere.</br>
+  </p>
+  <p style="color:black;font-family:Arial;font-size:14px;font-style:italic;">
+    <br>I grew up with my mom and dad, along with my siblings until I turned 15—when my mom left us. Since then, my siblings and I have lived under the same roof with our father. </br>
+    <br>Life hasn't been easy ever since; I've faced some personal struggles that affected my education and well-being and I had to drop Grade 11 (GAS) due to my poor mental state. </br>
+    <br>There were a lot of difficult moments in my life that made me feel hopeless, but they taught me resilience and self-awareness, which I'm thankful of.</br>
+    <img id="img4" src="https://i5.walmartimages.com/seo/Kasane-Teto-Plush-Doll-9-8-25CM-Kasane-Teto-Anime-Peripherals-Plush-Toy-Kasane-Teto-Soft-Throw-Plush-Toy-Pillow-Kasane-Home-Sofa-Decoration-Gift-Kasa_590d9841-ec4b-46a3-8c00-f56f087ab927.9d3d0db3061d08be1b3c4bb76018bcfa.jpeg?odnHeight=290&odnWidth=290&odnBg=FFFFFF">
+  </p>
+
+  <script>
+   
+    const images = [
+      { id: 'img1', x: 100, y: 100, vx: 2, vy: 2 },
+      { id: 'img2', x: 200, y: 200, vx: -2, vy: 1 },
+      { id: 'img3', x: 300, y: 300, vx: 1, vy: -2 },
+      { id: 'img4', x: 400, y: 400, vx: -1, vy: 2 }
+    ];
+
+    function animate() {
+      images.forEach(img => {
+        const element = document.getElementById(img.id);
+        img.x += img.vx;
+        img.y += img.vy;
+
+        
+        if (img.x <= 0 || img.x >= window.innerWidth - element.offsetWidth) {
+          img.vx = -img.vx;
+        }
+        if (img.y <= 0 || img.y >= window.innerHeight - element.offsetHeight) {
+          img.vy = -img.vy;
+        }
+
+        element.style.left = img.x + 'px';
+        element.style.top = img.y + 'px';
+      });
+    }
+
+    
+    images.forEach(img => {
+      const element = document.getElementById(img.id);
+      element.style.left = img.x + 'px';
+      element.style.top = img.y + 'px';
+    });
+
+    setInterval(animate, 16);
+  </script>
+</body>
+</html>
